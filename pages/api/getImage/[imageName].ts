@@ -7,17 +7,16 @@ type Data = {
   url: string
 }
 
-export default function handler(
+export default async function handler(
   req: NextApiRequest,
   res: NextApiResponse<Data>
 ) {
   const {imageName} = req.query
-  console.log(imageName)
+
   const storage = getStorage();
   const pathReference = ref(storage, `images/${imageName}`);
 
-  getDownloadURL(pathReference).then((url)=>{
-    console.log(url);
+ await getDownloadURL(pathReference).then((url)=>{
     res.status(200).json({ url: url})
   })
   .catch((error)=>{

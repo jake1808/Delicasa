@@ -21,9 +21,12 @@ const firebaseConfig = {
 };
 
 // Initialize Firebase
+//TODO: FIX INITIALIZATION
 const app = initializeApp(firebaseConfig);
 // console.log(app)
-const analytics = getAnalytics(app);
+//TODO:FIND PUT ABOUT ANALYTICS
+// const analytics = getAnalytics(app);
+// analytics.isSupported()
 const storage = getStorage(app);
 
 function MyApp({ Component, pageProps }: AppProps) {
