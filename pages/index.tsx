@@ -1,10 +1,22 @@
-import type { NextPage } from 'next'
+import { data } from 'autoprefixer'
+import { getDownloadURL, getStorage, ref } from 'firebase/storage'
+import type { GetStaticProps, NextPage } from 'next'
 import Head from 'next/head'
 import Image from 'next/image'
+import { type } from 'os'
 import Layout from '../components/layout'
+
 import styles from '../styles/Home.module.css'
 
-const Home: NextPage = () => {
+type props={
+  url:string
+}
+
+
+const Home = ({url}:props) => {
+
+console.log(url);
+  console.log()
   return (
     <div className={styles.container}>
       <Head>
@@ -13,10 +25,28 @@ const Home: NextPage = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main className={styles.main}>
-      <Layout></Layout>
+      
+        
       </main>
     </div>
   )
 }
 
+export const getStaticProps: GetStaticProps = async (context)=>{
+  const storage = getStorage();
+  const pathReference = ref(storage, `images/hero1.JPG`);
+  let heroImage = ""
+  
+ const url= await getDownloadURL(pathReference).then((url)=>{
+    console.log(url)
+    return url;
+  }).catch((error)=>{
+    console.log(error)
+  })
+  return{
+    props: {
+       url
+    }
+  }
+}
 export default Home

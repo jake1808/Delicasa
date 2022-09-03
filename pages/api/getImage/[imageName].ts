@@ -4,7 +4,8 @@ import {getDownloadURL, getStorage, ref} from 'firebase/storage'
 
 
 type Data = {
-  url: string
+  url: string,
+  error:string
 }
 
 export default async function handler(
@@ -17,18 +18,22 @@ export default async function handler(
   const pathReference = ref(storage, `images/${imageName}`);
 
  await getDownloadURL(pathReference).then((url)=>{
-    res.status(200).json({ url: url})
+    res.status(200).json({ url: url, error:''})
   })
   .catch((error)=>{
     switch(error.code){
       case 'storage/object-not-found':
         //TODO:write a response
+        return res.status(300).json({error:'Storage/object-not-found', url:''})
         break;
       case 'storage/unauthorized':
         //TODO:write a response
+        return res.status(404).json({error:'storage/unauthorized', url:''})
         break;
         case 'storage/unknown':
         //TODO:write a response
+        return res.status(500)
+        return res.status(404).json({error:'storage/unknown', url:''})
         break;
     }
   })
