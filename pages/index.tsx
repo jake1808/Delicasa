@@ -1,10 +1,11 @@
 import { data } from 'autoprefixer'
-import { getDownloadURL, getStorage, ref } from 'firebase/storage'
+
 import type { GetStaticProps, NextPage } from 'next'
 import Head from 'next/head'
 import Image from 'next/image'
 import { type } from 'os'
 import Nav from '../components/nav'
+import GetHeroImage from '../lib/data/get_hero_image'
 
 import styles from '../styles/Home.module.css'
 
@@ -31,16 +32,7 @@ const Home = ({url}:props) => {
 }
 
 export const getStaticProps: GetStaticProps = async (context)=>{
-  const storage = getStorage();
-  const pathReference = ref(storage, `images/hero1.JPG`);
-  let heroImage = ""
-  
- const url= await getDownloadURL(pathReference).then((url)=>{
-    console.log(url)
-    return url;
-  }).catch((error)=>{
-    console.log(error)
-  })
+ const url= await GetHeroImage();
   return{
     props: {
        url
@@ -48,3 +40,4 @@ export const getStaticProps: GetStaticProps = async (context)=>{
   }
 }
 export default Home
+
