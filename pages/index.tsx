@@ -21,7 +21,7 @@ const Home = ({url}:props) => {
       <Head>
         <title>Delicasa</title>
         <meta name="description" content="Delicasa website" />
-        <link rel="icon" href="" />
+        <link rel="icon" href="./logo.webp" />
         <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
       </Head>
       <main>
