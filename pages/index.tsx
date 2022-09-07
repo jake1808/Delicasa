@@ -18,7 +18,7 @@ type props={
 const Home = ({url}:props) => {
 
   return (
-    <div>
+    <div >
       <Head>
         <title>Delicasa</title>
         <meta name="description" content="Delicasa website" />
@@ -26,7 +26,7 @@ const Home = ({url}:props) => {
       </Head>
       <main>
       <Nav/>
-      <Hero/>
+      <Hero url={url}/>
       </main>
     </div>
   )
