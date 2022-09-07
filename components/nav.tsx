@@ -6,9 +6,9 @@ import Link from 'next/link'
 
 function Nav(){
     return(
-        <div className="navbar bg-white text-black">
-        <div className="navbar-start">
-         <Image src='/logo.webp' width={50} height={50} alt="logo"/>
+        <div className="navbar bg-white text-black p-0 shadow-xl">
+        <div className="navbar-start pl-6">
+         <Image src='/logo.webp' width={80} height={80} alt="logo"/>
         </div>
         <div className="navbar-center hidden lg:flex">
           <ul  className="menu menu-horizontal ">
@@ -23,8 +23,8 @@ function Nav(){
         </label>
         <ul tabIndex={0} className=" menu menu-compact lg:menu-normal dropdown-content bg-white  w-[200px]  p-2">
           {/* TODO:PLEASE DO THE LINKS FOR THESE PAGES */}
-          <li className=''><a><AiOutlineHome/> Home</a></li>
-          <li className=''><a><GrFavorite/> Featured products</a></li>
+          <li ><a><AiOutlineHome/> Home</a></li>
+          <li ><a><GrFavorite/> Featured products</a></li>
         </ul>
         </div>
         </div>

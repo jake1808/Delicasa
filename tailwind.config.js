@@ -7,6 +7,25 @@ module.exports = {
 
   theme: {
     extend: {},
+  
   },
   plugins: [require("daisyui")],
+  daisyui: {
+    styled: true,
+    themes: [
+      {
+        mytheme:{
+          primary: "#FF0000",
+          secondary:"#ffffff",
+          accent:"#000000"
+        }
+      }
+    ],
+    base: true,
+    utils: true,
+    logs: true,
+    rtl: false,
+    prefix: "",
+    darkTheme: "",
+  },
 };
