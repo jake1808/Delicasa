@@ -6,7 +6,7 @@ function Nav(){
     return(
         <div className="navbar bg-white">
         <div className="navbar-start">
-         <Image src='/logo.webp' width={50} height={50}/>
+         <Image src='/logo.webp' width={50} height={50} alt="logo"/>
         </div>
         <div className="navbar-center hidden lg:flex">
           <ul className="menu menu-horizontal ">
