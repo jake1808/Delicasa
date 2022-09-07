@@ -1,8 +1,6 @@
 import Image from 'next/image';
 import {AiOutlineMenu, AiOutlineHome} from 'react-icons/ai';
-import {GrFavorite} from 'react-icons/gr'
-
-import Link from 'next/link'
+import {GrFavorite} from 'react-icons/gr';
 
 function Nav(){
     return(

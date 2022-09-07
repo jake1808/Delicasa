@@ -24,17 +24,13 @@ export default async function handler(
     switch(error.code){
       case 'storage/object-not-found':
         //TODO:write a response
-        return res.status(300).json({error:'Storage/object-not-found', url:''})
-        break;
+        return res.status(300).json({error:'Storage/object-not-found', url:''});
       case 'storage/unauthorized':
         //TODO:write a response
-        return res.status(404).json({error:'storage/unauthorized', url:''})
-        break;
+        return res.status(404).json({error:'storage/unauthorized', url:''});
         case 'storage/unknown':
         //TODO:write a response
-        return res.status(500)
-        return res.status(404).json({error:'storage/unknown', url:''})
-        break;
+        return res.status(500);
     }
   })
   
