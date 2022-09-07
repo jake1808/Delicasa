@@ -4,6 +4,7 @@ import type { GetStaticProps, NextPage } from 'next'
 import Head from 'next/head'
 import Image from 'next/image'
 import { type } from 'os'
+import Hero from '../components/hero'
 import Nav from '../components/nav'
 import GetHeroImage from '../lib/data/get_hero_image'
 
@@ -26,6 +27,7 @@ const Home = ({url}:props) => {
       </Head>
       <main>
       <Nav/>
+      <Hero/>
       </main>
     </div>
   )
