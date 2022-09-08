@@ -6,7 +6,11 @@ module.exports = {
   ],
 
   theme: {
-    extend: {},
+    extend: {
+      fontFamily: {
+        'hero':['Dancing Script', 'cursive']
+      }
+    },
   
   },
   plugins: [require("daisyui")],
