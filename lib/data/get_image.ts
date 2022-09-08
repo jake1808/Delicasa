@@ -5,15 +5,16 @@ type args = {
   imageName:string
 }
 
-function GetImage({imageName}:args) {
+async function GetImage({imageName}:args) {
     const storage = getStorage();
     const pathReference = ref(storage, `images/${imageName}`);
-    return getDownloadURL(pathReference).then((url) => {
-      return url;
-    }).catch((error) => {
-      console.log(error);
-      return error;
-    })
+    try {
+    const url = await getDownloadURL(pathReference);
+    return url;
+  } catch (error) {
+    console.log(error);
+    return error;
+  }
   }
 
   export default GetImage;

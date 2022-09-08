@@ -1,5 +1,6 @@
 import { GetStaticProps } from 'next'
 import Head from 'next/head'
+import About from '../components/about'
 
 import Hero from '../components/hero'
 import Nav from '../components/nav'
@@ -14,7 +15,6 @@ type props={
 
 
 const Home = ({heroImage, aboutImage}:props) => {
-  console.log(aboutImage);
   return (
     <div >
       <Head>
@@ -22,9 +22,10 @@ const Home = ({heroImage, aboutImage}:props) => {
         <meta name="description" content="Delicasa website" />
         <link rel="icon" href="./logo.webp" />
       </Head>
-      <main>
+      <main className='w-full'>
       <Nav/>
       <Hero url={heroImage}/>
+      <About url={aboutImage}/>
       </main>
     </div>
   )
@@ -33,6 +34,7 @@ const Home = ({heroImage, aboutImage}:props) => {
 export const getStaticProps: GetStaticProps = async (context)=>{
  const heroImage= await GetImage({imageName:'hero1.JPG'});
  const aboutImage= await GetImage({imageName:'about_image.webp'});
+
   return{
     props: {
        heroImage:heroImage,
