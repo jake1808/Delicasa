@@ -12,14 +12,14 @@ function About({url}:props) {
  }
     
     return(
-      <div className="flex">
+      <div className="flex flex-col-reverse sm:flex-row">
         <div>
         <Image
         loader={myLoader}
         src='about_image.webp'
         alt="about image"
-        width={500}
-        height={700}
+        width={600}
+        height={900}
         
         />
             
