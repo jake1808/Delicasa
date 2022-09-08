@@ -3,17 +3,18 @@ import Head from 'next/head'
 
 import Hero from '../components/hero'
 import Nav from '../components/nav'
-import GetHeroImage from '../lib/data/get_hero_image'
+import GetImage from '../lib/data/get_image'
 
 import styles from '../styles/Home.module.css'
 
 type props={
-  url:string
+  heroImage:string,
+  aboutImage:string
 }
 
 
-const Home = ({url}:props) => {
-
+const Home = ({heroImage, aboutImage}:props) => {
+  console.log(aboutImage);
   return (
     <div >
       <Head>
@@ -23,17 +24,19 @@ const Home = ({url}:props) => {
       </Head>
       <main>
       <Nav/>
-      <Hero url={url}/>
+      <Hero url={heroImage}/>
       </main>
     </div>
   )
 }
 
 export const getStaticProps: GetStaticProps = async (context)=>{
- const url= await GetHeroImage();
+ const heroImage= await GetImage({imageName:'hero1.JPG'});
+ const aboutImage= await GetImage({imageName:'about_image.webp'});
   return{
     props: {
-       url
+       heroImage:heroImage,
+       aboutImage:aboutImage
     }
   }
 }
