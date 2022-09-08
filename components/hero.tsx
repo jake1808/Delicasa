@@ -8,7 +8,7 @@ function Hero({url}:props){
     <div className="hero min-h-full w-full" style={{backgroundImage:`url(${url})`}}>
     <div className="hero-overlay bg-opacity-60"></div>
     <div className="hero-content text-center text-white ">
-    <div className=" py-[80px]">
+    <div className=" py-[200px]">
         <p>Since 2019-</p>
         <hr className=""/>
         <h1 className="text-[70px] sm:text-[120px] font-bold font-hero">DELICASA</h1>
