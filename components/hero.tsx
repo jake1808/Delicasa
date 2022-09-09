@@ -17,8 +17,7 @@ function Hero({url}:props){
     </div>
     </div>
     </div>
-    )
-
+    );
 }
 
 export default Hero;
