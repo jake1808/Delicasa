@@ -1,4 +1,4 @@
-import { GetStaticProps } from 'next'
+import { GetServerSideProps} from 'next'
 import Head from 'next/head'
 import About from '../components/about'
 
@@ -36,7 +36,7 @@ const Home = ({heroImage, aboutImage, card1, card2, card3}:props) => {
   )
 }
 
-export const getStaticProps: GetStaticProps = async (context)=>{
+export const getServerSideProps: GetServerSideProps = async (context)=>{
  const heroImage= await GetImage({imageName:'hero1.JPG'});
  const aboutImage= await GetImage({imageName:'about_image.webp'});
  const card1=await GetImage({imageName:'card1.webp'});
