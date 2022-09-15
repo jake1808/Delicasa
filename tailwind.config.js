@@ -8,30 +8,33 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        'hero':['Dancing Script', 'cursive']
-      }
+        hero: ["Dancing Script", "cursive"],
+      },
     },
-  
   },
-  plugins: [require("daisyui")],
+  plugins: [require("daisyui"), require("@tailwindcss/typography")],
   daisyui: {
     styled: true,
     themes: [
       {
-        mytheme:{
-          primary: "#FF0000",
-          secondary:"#ffffff",
-          accent:"#000000",
-          neutral: "#000000",
+        mytheme: {
+          primary: "#111827",
+          secondary: "#ffffff",
+          accent: "#FF0000",
+          neutral: "#191D24",
           "base-100": "#ffffff",
-        }
-      }
+          info: "#FF0000",
+          success: "#36D399",
+          warning: "#FBBD23",
+          error: "#F87272",
+        },
+      },
     ],
     base: true,
     utils: true,
     logs: true,
     rtl: false,
     prefix: "",
-    darkTheme: "",
+    darkTheme: "mytheme",
   },
 };

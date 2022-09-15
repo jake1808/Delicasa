@@ -10,8 +10,8 @@ function Nav(){
         </div>
         <div className="navbar-center hidden lg:flex">
           <ul  className="menu menu-horizontal ">
-            <li><a>Home</a></li>
-            <li><a>Featured products</a></li>
+            <li className=''><a className='active:bg-accent active:text-secondary rounded'>Home</a></li>
+            <li><a className='active:bg-accent active:text-secondary rounded'>Featured products</a></li>
           </ul>
         </div>
         <div className='navbar-end '>
@@ -21,8 +21,8 @@ function Nav(){
         </label>
         <ul tabIndex={0} className=" menu menu-compact lg:menu-normal dropdown-content bg-white  w-[200px]  p-2">
           {/* TODO:PLEASE DO THE LINKS FOR THESE PAGES */}
-          <li ><a><AiOutlineHome/> Home</a></li>
-          <li ><a><GrFavorite/> Featured products</a></li>
+          <li ><a className='active:bg-accent active:text-secondary rounded'><AiOutlineHome/> Home</a></li>
+          <li ><a className='active:bg-accent active:text-secondary rounded'><GrFavorite/> Featured products</a></li>
         </ul>
         </div>
         </div>
