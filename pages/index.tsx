@@ -57,7 +57,7 @@ export const getServerSideProps: GetServerSideProps = async (context)=>{
   const card2= await card2Link.json();
 
   const card3Link=await fetch(`${process.env.IMAGE_LINK}/api/getImage/card3.webp`);
-  const card3= await card3Link.json();
+  const card3= await card3Link.json(); 
 
   return{
     props: {
