@@ -5,16 +5,23 @@ import About from '../components/about'
 import Hero from '../components/hero'
 import Nav from '../components/nav'
 import SocialNews from '../components/socialNews'
-import GetImage from '../lib/data/get_image'
-
-import styles from '../styles/Home.module.css'
 
 type props={
-  heroImage:string,
-  aboutImage:string,
-  card1:string,
-  card2:string,
-  card3:string
+  heroImage:{
+    url:string
+  },
+  aboutImage:{
+    url:string
+  },
+  card1:{
+    url:string
+  },
+  card2:{
+    url:string
+  },
+  card3:{
+    url:string
+  }
 }
 
 
@@ -28,20 +35,29 @@ const Home = ({heroImage, aboutImage, card1, card2, card3}:props) => {
       </Head>
       <main className='w-full'>
       <Nav/>
-      <Hero url={heroImage}/>
-      <About url={aboutImage}/>
-      <SocialNews card1={card1} card2={card2} card3={card3}/>
+      <Hero url={heroImage.url}/>
+      <About url={aboutImage?.url}/>
+      <SocialNews card1={card1?.url} card2={card2?.url} card3={card3?.url}/>
       </main>
     </div>
   )
 }
 
 export const getServerSideProps: GetServerSideProps = async (context)=>{
- const heroImage= await GetImage({imageName:'hero1.JPG'});
- const aboutImage= await GetImage({imageName:'about_image.webp'});
- const card1=await GetImage({imageName:'card1.webp'});
- const card2=await GetImage({imageName:'card2.webp'});
- const card3=await GetImage({imageName:'card3.webp'});
+  const heroLink= await fetch("http://localhost:3000/api/getImage/hero1.JPG");
+  const heroImage= await heroLink.json();
+
+  const aboutLink= await fetch("http://localhost:3000/api/getImage/about_image.webp");
+  const aboutImage= await aboutLink.json();
+
+  const card1Link= await fetch("http://localhost:3000/api/getImage/card1.webp");
+  const card1= await card1Link.json();
+
+  const card2Link=await fetch("http://localhost:3000/api/getImage/card2.webp");
+  const card2= await card2Link.json();
+
+  const card3Link=await fetch("http://localhost:3000/api/getImage/card3.webp");
+  const card3= await card3Link.json();
 
   return{
     props: {
