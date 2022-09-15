@@ -44,19 +44,19 @@ const Home = ({heroImage, aboutImage, card1, card2, card3}:props) => {
 }
 
 export const getServerSideProps: GetServerSideProps = async (context)=>{
-  const heroLink= await fetch(`${process.env.IMAGE_LINK}/api/getImage/hero1.JPG`);
+  const heroLink= await fetch(`./api/getImage/hero1.JPG`);
   const heroImage= await heroLink.json();
 
-  const aboutLink= await fetch(`${process.env.IMAGE_LINK}/api/getImage/about_image.webp`);
+  const aboutLink= await fetch(`./api/getImage/about_image.webp`);
   const aboutImage= await aboutLink.json();
 
-  const card1Link= await fetch(`${process.env.IMAGE_LINK}/api/getImage/card1.webp`);
+  const card1Link= await fetch(`./api/getImage/card1.webp`);
   const card1= await card1Link.json();
 
-  const card2Link=await fetch(`${process.env.IMAGE_LINK}/api/getImage/card2.webp`);
+  const card2Link=await fetch(`./api/getImage/card2.webp`);
   const card2= await card2Link.json();
 
-  const card3Link=await fetch("http://localhost:3000/api/getImage/card3.webp");
+  const card3Link=await fetch("./api/getImage/card3.webp");
   const card3= await card3Link.json();
 
   return{
