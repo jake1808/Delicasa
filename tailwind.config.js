@@ -1,6 +1,13 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
+  safelist: [
+    '!duration-0',
+    '!delay-0',
+    'html.js :where([class*="taos:"]:not(.taos-init))'
+  ],
+
   content: [
+    {transform: (content) => content.replace(/taos:/g, '')},
     "./pages/**/*.{js,ts,jsx,tsx}",
     "./components/**/*.{js,ts,jsx,tsx}",
   ],
@@ -12,7 +19,7 @@ module.exports = {
       },
     },
   },
-  plugins: [require("daisyui"), require("@tailwindcss/typography")],
+  plugins: [require("daisyui"), require("@tailwindcss/typography"), require('taos/plugin')],
   daisyui: {
     styled: true,
     themes: [

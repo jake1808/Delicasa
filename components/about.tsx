@@ -9,7 +9,7 @@ type props = {
 function About({url}:props) {
     
     return(
-      <div className="flex flex-col-reverse justify-center items-center sm:flex-row">
+      <div className="flex flex-col-reverse justify-center items-center sm:flex-row delay-[300ms] duration-[600ms] taos:translate-x-[-200px] taos:opacity-0"  data-taos-offset="400">
         <div>
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img src={url}/>
