@@ -44,19 +44,21 @@ const Home = ({heroImage, aboutImage, card1, card2, card3}:props) => {
 }
 
 export const getServerSideProps: GetServerSideProps = async (context)=>{
-  const heroLink= await fetch(`${process.env.IMAGE_LINK}/api/getImage/hero1.JPG`);
+  console.log(process.env.IMAGE_LINK)
+  const heroLink= await fetch(`https://delicasa-jake1808.vercel.app/api/getImage/hero.jpeg`);
+  console.log(heroLink)
   const heroImage= await heroLink.json();
 
-  const aboutLink= await fetch(`${process.env.IMAGE_LINK}/api/getImage/about_image.webp`);
+  const aboutLink= await fetch(`https://delicasa-jake1808.vercel.app/api/getImage/about_image.webp`);
   const aboutImage= await aboutLink.json();
 
-  const card1Link= await fetch(`${process.env.IMAGE_LINK}/api/getImage/card1.webp`);
+  const card1Link= await fetch(`https://delicasa-jake1808.vercel.app/api/getImage/card1.jpeg`);
   const card1= await card1Link.json();
 
-  const card2Link=await fetch(`${process.env.IMAGE_LINK}/api/getImage/card2.webp`);
+  const card2Link=await fetch(`https://delicasa-jake1808.vercel.app/api/getImage/card2.webp`);
   const card2= await card2Link.json();
 
-  const card3Link=await fetch(`${process.env.IMAGE_LINK}/api/getImage/card3.webp`);
+  const card3Link=await fetch(`https://delicasa-jake1808.vercel.app/api/getImage/card3.webp`);
   const card3= await card3Link.json(); 
 
   return{

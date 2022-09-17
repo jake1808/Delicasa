@@ -21,13 +21,13 @@ function SocialNews({card1, card2, card3}:props){
 export default SocialNews;
 
 function CardElement(cardImage: string, cardText:string) {
-    return (<div className="card w-96 shadow-xl image-full max-h-[60vh] text-center mb-4 md:mb-0">
+    return (<div className="card w-96 shadow-xl image-full max-h-[40vh] text-center mb-4 md:mb-0">
         <figure><img src={cardImage} alt='food' /></figure>
-        <div className="card-body items-center mt-40">
-            <h2 className="card-title text-white mt-20">{cardText}</h2>
+        <div className="card-body items-center mt-36">
+            <h2 className="card-title text-white ">{cardText}</h2>
             <div className="card-actions justify-center">
                 <Link href="">
-                    <a className="text-white">Know more</a>
+                    <a className="link link-accent">Know more</a>
                 </Link>
             </div>
         </div>
