@@ -3,6 +3,7 @@ import Head from 'next/head'
 import About from '../components/about'
 
 import Hero from '../components/hero'
+import MapSection from '../components/mapsection'
 import Nav from '../components/nav'
 import SocialNews from '../components/socialNews'
 
@@ -27,19 +28,21 @@ type props={
 
 const Home = ({heroImage, aboutImage, card1, card2, card3}:props) => {
   return (
-    <div >
+    <>
       <Head>
         <title>Delicasa</title>
         <meta name="description" content="Delicasa website" />
         <link rel="icon" href="./logo.webp" />
       </Head>
-      <main className='w-full'>
+      
+      <main >
       <Nav/>
       <Hero url={heroImage.url}/>
       <About url={aboutImage?.url}/>
       <SocialNews card1={card1?.url} card2={card2?.url} card3={card3?.url}/>
+      <MapSection/>
       </main>
-    </div>
+    </>
   )
 }
 

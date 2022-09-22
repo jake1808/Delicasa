@@ -5,7 +5,7 @@ type props={
 
 function Hero({url}:props){
     return(
-    <div className="hero min-h-full w-full" style={{backgroundImage:`url(${url})`}}>
+    <div className="hero min-h-full" style={{backgroundImage:`url(${url})`}}>
     <div className="hero-overlay bg-opacity-60"></div>
     <div className="hero-content text-center text-white ">
     <div className=" py-[200px]">
