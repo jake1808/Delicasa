@@ -36,7 +36,7 @@ function SocialNews({card1, card2, card3}:props){
 export default SocialNews;
 
 function CardElement(cardImage: string, cardText:string) {
-    return (<div className="card card-compact w-10/12 shadow-xl image-full max-h-[40vh] text-center mb-4 md:mb-0 md:mx-6 md:w-4/12">
+    return (<div className="card card-compact w-10/12 shadow-2xl image-full max-h-[40vh] text-center mb-4 md:mb-0 md:mx-6 md:w-4/12">
         <figure className="max-h-[30vh] "><img className="w-full" src={cardImage} alt='food' /></figure>
         <div className="card-body items-center justify-center">
             <h2 className="card-title text-white ">{cardText}</h2>
