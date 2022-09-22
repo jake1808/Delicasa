@@ -18,8 +18,8 @@ function About({url}:props) {
             <h3 className="font-semibold text-3xl mb-4">Delight in every flavour</h3>
             <p className="mb-4">We are a local Deli based in two locations in lusaka. We offer products from around the world, including British teas, Italian Hams, American Bakes and Coffees and the best of your local Zambian products!</p>
             <p className="mb-4">We are affiliated with Majoru meats and offer a wide range of their products. We also have our own line of meats and sausage flavours from all over the globe. We offer pop up barbecues/sausage sizzles at private and public events. Additionally we are proud members of &quot;This Is Not A Game&quot;, the nationally recognized state for legal game meat distributors.</p>
-            <Link href="">
-                <a className="hover:text-primary hover:underline">Visit our stores</a>
+            <Link href="#maps">
+                <a className="link link-accent">Visit our stores</a>
             </Link>
         </div>
       </div>

@@ -4,7 +4,7 @@ import Link from "next/link"
 
  function MapSection (){
   return(
-    <div className="p-8 ">
+    <div className="p-8 " id="maps">
       <h3 className="text-center mb-8 text-4xl">Shop Locations</h3>
   <div className="flex flex-col justify-evenly items-center md:flex-row">
   <MapCard 
