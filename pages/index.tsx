@@ -1,6 +1,7 @@
 import { GetServerSideProps} from 'next'
 import Head from 'next/head'
 import { useEffect, useState } from 'react'
+import ReactLoading from 'react-loading'
 import About from '../components/about'
 
 import Hero from '../components/hero'
@@ -30,7 +31,9 @@ type props={
 const Home = ({heroImage, aboutImage, card1, card2, card3}:props) => {
   const [loading, setLoading] = useState(true)
   useEffect(() => {
-    setLoading(false)
+    setTimeout(()=>{
+     setLoading(false)
+    }, 9000)
   }, [heroImage, aboutImage, card1, card2, card3])
   
   return (
@@ -41,12 +44,19 @@ const Home = ({heroImage, aboutImage, card1, card2, card3}:props) => {
         <link rel="icon" href="./logo.webp" />
       </Head>
       <Nav/>
-        <main > 
+      {loading?
+      (
+      <div className='h-screen flex justify-center items-center'>
+        <ReactLoading type='spinningBubbles' color='#FF0000' height={267} width={175}/>
+        </div>
+        )
+        :
+        (<main > 
         <Hero url={heroImage.url}/>
         <About url={aboutImage?.url}/>
         <SocialNews card1={card1?.url} card2={card2?.url} card3={card3?.url}/>
         <MapSection/>
-        </main>
+        </main>)}
       <footer className='bg-accent flex justify-end'>
         <div className='p-9 '>
           <h3 className='text-secondary text-xl'>Developed by <a href='https://www.linkedin.com/in/jacob-mutale-a13167209/' className='link link-secondary font-bold'>Jacob Mutale</a></h3>
