@@ -19,7 +19,7 @@ module.exports = {
       },
     },
   },
-  plugins: [require("daisyui"), require("@tailwindcss/typography"), require('taos/plugin')],
+  plugins: [require("daisyui"), require("@tailwindcss/typography")],
   daisyui: {
     styled: true,
     themes: [

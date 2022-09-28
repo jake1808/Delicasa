@@ -16,8 +16,7 @@ export default function SimpleMap(){
   return (
     <div>
        <Script
-        url= `https://maps.googleapis.com/maps/api/js?key=${process.env.GOOGLE_API_KEY}&libraries=places`
-        onLoad={}/>
+        src= {`https://maps.googleapis.com/maps/api/js?key=${process.env.GOOGLE_API_KEY}&libraries=places`}/>
     </div>
     );
 }
