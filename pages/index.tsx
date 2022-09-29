@@ -6,7 +6,7 @@ import About from '../components/about'
 
 import Hero from '../components/hero'
 import MapSection from '../components/mapsection'
-import Nav from '../components/nav'
+
 import SocialNews from '../components/socialNews'
 
 type props={

@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import Link from 'next/link';
 import {AiOutlineMenu, AiOutlineHome} from 'react-icons/ai';
 import {GrFavorite} from 'react-icons/gr';
 
@@ -10,12 +11,12 @@ function Nav(){
          {/* <Image src='/logo.webp' width={80} height={80} alt="logo"/> */}
         </div>
         <div className="navbar-center  lg:flex">
+        <Link href='#top' scroll={true}>
         <Image src='/logo.webp' width={80} height={80} alt="logo"/>
+        </Link>
           <ul  className="menu menu-horizontal ">
-
             <li className=''><a className='hidden active:bg-accent active:text-secondary rounded'>Home</a></li>
             <li><a className='hidden active:bg-accent active:text-secondary rounded'>Featured products</a></li>
-            
           </ul>
         </div>
         <div className='navbar-end '>
