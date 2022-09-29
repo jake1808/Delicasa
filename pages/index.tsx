@@ -52,7 +52,7 @@ const Home = ({heroImage, aboutImage, card1, card2, card3}:props) => {
         )
         :
         (<main > 
-        <Hero url={heroImage.url}/>
+        <Hero url={heroImage.url} />
         <About url={aboutImage?.url}/>
         <SocialNews card1={card1?.url} card2={card2?.url} card3={card3?.url}/>
         <MapSection/>
