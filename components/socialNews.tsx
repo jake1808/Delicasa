@@ -1,5 +1,6 @@
 import Link from "next/link";
 import {BsFacebook, BsInstagram, BsWhatsapp} from 'react-icons/bs'
+import { useInView } from "react-intersection-observer";
 
 
 type props = {
@@ -9,6 +10,7 @@ type props = {
 }
 
 function SocialNews({card1, card2, card3}:props){
+    
     return(
         <div className="bg-accent flex flex-col items-center pb-6 w-full">
         <div className="flex flex-col py-10 items-center md:flex-row  md:justify-evenly md:items-stretch" >
@@ -36,7 +38,13 @@ function SocialNews({card1, card2, card3}:props){
 export default SocialNews;
 
 function CardElement(cardImage: string, cardText:string) {
-    return (<div className="card card-compact w-10/12 shadow-2xl image-full max-h-[40vh] text-center mb-4 md:mb-0 md:mx-6 md:w-4/12">
+    const {ref, inView} = useInView({
+        triggerOnce: false,
+        rootMargin: '-100px 0px'
+      })
+    
+    return (
+    <div ref={ref} className={`card card-compact w-10/12 shadow-2xl image-full max-h-[40vh] text-center mb-4 md:mb-0 md:mx-6 md:w-4/12 transition ease-in duration-700 ${inView ? 'opacity-1 translate-y-0':'opacity-0 -translate-y-6'}`}>
         <figure className="max-h-[30vh] "><img className="w-full" src={cardImage} alt='food' /></figure>
         <div className="card-body items-center justify-center">
             <h2 className="card-title text-white ">{cardText}</h2>

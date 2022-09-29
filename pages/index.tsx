@@ -33,6 +33,7 @@ const Home = ({heroImage, aboutImage, card1, card2, card3}:props) => {
   useEffect(() => {
     setTimeout(()=>{
      setLoading(false)
+     console.log('hi')
     }, 9000)
   }, [heroImage, aboutImage, card1, card2, card3])
   

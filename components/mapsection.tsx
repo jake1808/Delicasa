@@ -7,7 +7,7 @@ import {useInView} from 'react-intersection-observer'
   return(
     <div  className={`p-8`} id="maps">
       <h3 className="text-center mb-8 text-4xl">Shop Locations</h3>
-  <div className="flex flex-col justify-evenly items-center md:flex-row">
+  <div className="flex flex-col justify-evenly items-center lg:flex-row">
   <MapCard 
       ImageUrl={`https://api.mapbox.com/styles/v1/mapbox/satellite-streets-v11/static/pin-s+fb0404(28.2861035,-15.410147077044845)/28.2861,-15.4101,15,0/300x200?access_token=${process.env.NEXT_PUBLIC_MAP_API_TOKEN}`}
       title='Kabelenga'
@@ -47,7 +47,7 @@ function MapCard({ImageUrl, title, directions, mapUrl}:cardProps) {
   })
 
 
-  return <div ref={ref} className={`card card-compact w-96 bg-base-100 shadow-2xl mb-6 transition ease-in duration-700 ${inView ? 'opacity-1 translate-x-0':'opacity-0 -translate-x-6'}`}>
+  return <div ref={ref} className={`card card-compact w-96 mb:w-80 bg-base-100 shadow-2xl mb-6 transition ease-in duration-700 ${inView ? 'opacity-1 translate-x-0':'opacity-0 -translate-x-6'}`}>
     <figure><img src={ImageUrl} alt="MapImage" /></figure>
     <div className="card-body">
       <h2 className="card-title">{title}</h2>
