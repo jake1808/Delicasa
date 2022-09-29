@@ -44,7 +44,7 @@ const Home = ({heroImage, aboutImage, card1, card2, card3}:props) => {
         <meta name="description" content="Delicasa website" />
         <link rel="icon" href="./logo.webp" />
       </Head>
-      <Nav/>
+    
       {loading?
       (
       <div className='h-screen flex justify-center items-center'>
@@ -52,17 +52,13 @@ const Home = ({heroImage, aboutImage, card1, card2, card3}:props) => {
         </div>
         )
         :
-        (<main > 
+        (< > 
         <Hero url={heroImage.url} />
         <About url={aboutImage?.url}/>
         <SocialNews card1={card1?.url} card2={card2?.url} card3={card3?.url}/>
         <MapSection/>
-        </main>)}
-      <footer className='bg-accent flex justify-end'>
-        <div className='p-9 '>
-          <h3 className='text-secondary text-xl'>Developed by <a href='https://www.linkedin.com/in/jacob-mutale-a13167209/' className='link link-secondary font-bold'>Jacob Mutale</a></h3>
-        </div>
-      </footer>
+        </>)}
+     
     </>
   )
 }

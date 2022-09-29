@@ -5,6 +5,7 @@ import type { AppProps } from 'next/app'
 import { initializeApp } from "firebase/app";
 import { getAnalytics } from "firebase/analytics";
 import { getStorage } from "firebase/storage";
+import Layout from '../components/layout';
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
 
@@ -30,7 +31,10 @@ const app = initializeApp(firebaseConfig);
 const storage = getStorage(app);
 
 function MyApp({ Component, pageProps }: AppProps) {
-  return <Component {...pageProps} />
+  return (
+    <Layout>
+    <Component {...pageProps} />
+    </Layout>)
 }
 
 export default MyApp
