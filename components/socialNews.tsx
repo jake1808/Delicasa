@@ -6,17 +6,17 @@ import { useInView } from "react-intersection-observer";
 type props = {
     card1:string,
     card2:string,
-    card3:string
+   
 }
 
-function SocialNews({card1, card2, card3}:props){
+function SocialNews({card1, card2}:props){
     
     return(
         <div className="bg-accent flex flex-col items-center pb-6 w-full">
         <div className="flex flex-col py-10 items-center md:flex-row  md:justify-evenly md:items-stretch" >
-            {CardElement(card1, "Check out our international range")}
-            {CardElement(card2, "The beverage corner")}
-            {CardElement(card3, "Have a question")}
+            {CardElement(card1, "Check out our international range", '/featured')}
+            {CardElement(card2, "The beverage corner", '/beveragecorner')}
+      
             </div>
             <h3 className="mb-10 text-secondary text-4xl">Contact us</h3>
             <div className="flex justify-between w-9/12 mb:w-3/12">
@@ -37,7 +37,7 @@ function SocialNews({card1, card2, card3}:props){
 
 export default SocialNews;
 
-function CardElement(cardImage: string, cardText:string) {
+function CardElement(cardImage: string, cardText:string, cardLink:string) {
     const {ref, inView} = useInView({
         triggerOnce: false,
         rootMargin: '-100px 0px'
@@ -49,7 +49,7 @@ function CardElement(cardImage: string, cardText:string) {
         <div className="card-body items-center justify-center">
             <h2 className="card-title text-white ">{cardText}</h2>
             <div className="card-actions justify-center">
-                <Link href="">
+                <Link href={cardLink}>
                     <a className="link link-secondary">Know more</a>
                 </Link>
             </div>

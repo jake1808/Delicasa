@@ -11,7 +11,7 @@ function Nav(){
          {/* <Image src='/logo.webp' width={80} height={80} alt="logo"/> */}
         </div>
         <div className="navbar-center  lg:flex">
-        <Link href='#top' scroll={true}>
+        <Link href='/' scroll={true}>
         <Image src='/logo.webp' width={80} height={80} alt="logo"/>
         </Link>
           <ul  className="menu menu-horizontal ">

@@ -21,21 +21,17 @@ type props={
   },
   card2:{
     url:string
-  },
-  card3:{
-    url:string
   }
 }
 
 
-const Home = ({heroImage, aboutImage, card1, card2, card3}:props) => {
+const Home = ({heroImage, aboutImage, card1, card2}:props) => {
   const [loading, setLoading] = useState(true)
   useEffect(() => {
     setTimeout(()=>{
      setLoading(false)
-     console.log('hi')
     }, 9000)
-  }, [heroImage, aboutImage, card1, card2, card3])
+  }, [heroImage, aboutImage, card1, card2])
   
   return (
     <>
@@ -55,7 +51,7 @@ const Home = ({heroImage, aboutImage, card1, card2, card3}:props) => {
         (< > 
         <Hero url={heroImage.url} />
         <About url={aboutImage?.url}/>
-        <SocialNews card1={card1?.url} card2={card2?.url} card3={card3?.url}/>
+        <SocialNews card1={card1?.url} card2={card2?.url}/>
         <MapSection/>
         </>)}
      
@@ -78,16 +74,13 @@ export const getServerSideProps: GetServerSideProps = async (context)=>{
   const card2Link=await fetch(`https://delicasa-jake1808.vercel.app/api/getImage/card2.webp`);
   const card2= await card2Link.json();
 
-  const card3Link=await fetch(`https://delicasa-jake1808.vercel.app/api/getImage/card3.webp`);
-  const card3= await card3Link.json(); 
 
   return{
     props: {
        heroImage:heroImage,
        aboutImage:aboutImage,
        card1:card1,
-       card2:card2,
-       card3:card3
+       card2:card2
     }
   }
 }
