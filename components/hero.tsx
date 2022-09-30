@@ -20,7 +20,7 @@ function Hero({url}:props){
         <hr className=""/>
         <h1 className="text-[70px] sm:text-[120px] font-bold font-hero">DELICASA</h1>
         <hr className=" mb-5"/>
-        <p className="">Deli meats and cheeses / Majoru distributors / Legal game </p>
+        <p className="">Deli meats and cheeses / Legal game </p>
     </div>
     </div>
     </div>
