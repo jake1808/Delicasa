@@ -1,4 +1,4 @@
-import { GetServerSideProps} from 'next'
+import {  GetStaticProps} from 'next'
 import Head from 'next/head'
 import { useEffect, useState } from 'react'
 import ReactLoading from 'react-loading'
@@ -30,7 +30,7 @@ const Home = ({heroImage, aboutImage, card1, card2}:props) => {
   useEffect(() => {
     setTimeout(()=>{
      setLoading(false)
-    }, 9000)
+    }, 5000)
   }, [heroImage, aboutImage, card1, card2])
   
   return (
@@ -59,7 +59,7 @@ const Home = ({heroImage, aboutImage, card1, card2}:props) => {
   )
 }
 
-export const getServerSideProps: GetServerSideProps = async (context)=>{
+export const getStaticProps: GetStaticProps = async (context)=>{
 
   const heroLink= await fetch(`https://delicasa-jake1808.vercel.app/api/getImage/hero.jpeg`);
 
