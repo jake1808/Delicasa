@@ -18,11 +18,11 @@ import {useInView} from 'react-intersection-observer'
       title='The Village'
       directions="You can find our other shop in the village along leopards hill road"
       mapUrl="https://goo.gl/maps/nvu1fjK2vfgieopv8" />
-  <MapCard 
+  {/* <MapCard 
       ImageUrl={`https://api.mapbox.com/styles/v1/mapbox/satellite-streets-v11/static/pin-s+ff0000(28.374965719114225,-15.447671534460746)/28.375,-15.4477,15,0/300x200?access_token=${process.env.NEXT_PUBLIC_MAP_API_TOKEN}`}
       title='Bauleni'
       directions="You can find our other shop in Bauleni opposite Shoprite"
-      mapUrl="https://goo.gl/maps/bBrKTAcfaG9hMsS38"/>
+      mapUrl="https://goo.gl/maps/bBrKTAcfaG9hMsS38"/> */}
       </div>
     </div>
   )

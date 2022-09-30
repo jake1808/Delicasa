@@ -9,6 +9,7 @@ type props = {
 export default function Layout({children}:props){
     return(
         <>
+        
         <Nav/>
         <main>{children}</main>
         <Footer/>
